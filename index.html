@@ -1,155 +1,176 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lagrange 103 · Bienvenida</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #fff;
-      color: #0f172a;
-      line-height: 1.6;
-    }
-    header {
-      position: sticky;
-      top: 0;
-      background: #fff;
-      border-bottom: 1px solid #ddd;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header nav a {
-      margin: 0 1rem;
-      text-decoration: none;
-      color: #333;
-      font-weight: bold;
-    }
-    header nav a:hover {
-      color: #0072ce;
-    }
-    section {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 3rem 1rem;
-      text-align: justify;
-    }
-    section h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      color: #37c871;
-    }
-    section h3 {
-      color: #0072ce;
-      margin-top: 1rem;
-    }
-    footer {
-      border-top: 1px solid #ddd;
-      padding: 1rem 2rem;
-      font-size: 0.9rem;
-      color: #555;
-      text-align: center;
-    }
-    .card {
-      border: 1px solid #ddd;
-      border-radius: 8px;
-      padding: 1rem;
-      margin-bottom: 1.5rem;
-      background: #fafafa;
-      text-align: justify;
-    }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lagrange 103 · Bienvenida</title>
+<meta name="description" content="Bienvenida, ubicación e instrucciones del Día 1 para la mudanza a Lagrange 103." />
+<style>
+  /* Paleta aproximada tomada del logo */
+  :root{
+    --blue:#0A67F5;     /* principal */
+    --green:#2ED93F;    /* acento */
+    --red:#FF2A2A;      /* apoyo */
+    --yellow:#FFC54D;   /* apoyo */
+    --ink:#0F172A;
+    --muted:#F6F8FF;
+    --card:#FFFFFF;
+    --radius:18px;
+    --shadow:0 10px 26px rgba(15,23,42,.08);
+    --shadow-sm:0 6px 16px rgba(15,23,42,.06);
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;background:#fff;color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  /* Header */
+  header{
+    position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
+    backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid #E6ECF5;
+  }
+  .nav{max-width:1100px;margin:0 auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .brand{display:flex;align-items:center;gap:.75rem}
+  .brand img{height:38px}
+  .links{display:flex;gap:10px;flex-wrap:wrap}
+  .links a{font-weight:800;color:#334155;padding:8px 12px;border-radius:12px}
+  .links a:hover{background:#EEF4FF;color:#0f172a}
+
+  /* Botones */
+  .btn{
+    display:inline-flex;align-items:center;gap:.5rem;padding:12px 18px;border-radius:14px;
+    font-weight:900;border:2px solid var(--blue);box-shadow:var(--shadow-sm)
+  }
+  .btn-primary{background:var(--blue);color:#fff}
+  .btn-outline{background:#fff;color:var(--blue)}
+  .btn-green{background:var(--green);color:#06370D;border-color:var(--green)}
+  .btn-red{background:var(--red);color:#fff;border-color:var(--red)}
+
+  /* Hero */
+  .hero{position:relative;overflow:hidden;background:var(--muted)}
+  .hero .wrap{max-width:1100px;margin:0 auto;padding:56px 20px}
+  .h1{margin:0 0 12px;font-weight:900;letter-spacing:-.02em;line-height:1.05;
+      font-size:clamp(32px,6.2vw,60px);color:var(--blue)}
+  .sub{max-width:880px;margin:0 0 20px;color:#475569;font-size:clamp(16px,2.2vw,20px);text-align:justify}
+  .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px}
+  .shape-blue,.shape-green,.shape-yellow{
+    position:absolute;pointer-events:none;border-radius:50%;opacity:.14;filter:blur(2px)
+  }
+  .shape-blue{width:300px;height:300px;right:-120px;top:-80px;background:var(--blue)}
+  .shape-green{width:200px;height:200px;left:-70px;bottom:-70px;background:var(--green)}
+  .shape-yellow{width:160px;height:160px;right:10%;bottom:-60px;background:var(--yellow)}
+
+  /* Sections */
+  section{scroll-margin-top:90px;padding:56px 0}
+  .container{max-width:1100px;margin:0 auto;padding:0 20px}
+  .title{margin:0 0 14px;color:var(--green);font-size:clamp(26px,3.6vw,40px);font-weight:900}
+  .just{text-align:justify}
+
+  /* Cards + grid */
+  .card{background:var(--card);border:1px solid #E6ECF5;border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+  .grid{display:grid;gap:18px}
+  @media (min-width:860px){ .grid-2{grid-template-columns:1fr 1fr} }
+
+  /* Footer */
+  footer{border-top:1px solid #E6ECF5}
+  footer .container{padding:22px 20px;color:#64748B;display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+</style>
 </head>
 <body>
-  <header>
-    <div><strong style="color:#0072ce">FERPA · Lagrange 103</strong></div>
-    <nav>
+
+<!-- Header -->
+<header>
+  <div class="nav">
+    <div class="brand">
+      <img src="Edyen.png" alt="Edyen" />
+    </div>
+    <nav class="links" aria-label="Principal">
       <a href="#introduccion">Introducción</a>
       <a href="#bienvenida">Carta</a>
       <a href="#ubicacion">Ubicación</a>
       <a href="#instrucciones">Día 1</a>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <section id="introduccion">
-    <h2>SECCIÓN: Introducción</h2>
-    <p>El 1º de septiembre estrenamos oficinas en José Luis Lagrange 103, Polanco, marcando un impulso en nuestra Visión 2030: El universo donde las familias alcanzan su máximo potencial. </p>
-  </section>
-
-  <section id="bienvenida">
-    <h2>SECCIÓN: Carta de Bienvenida</h2>
-    <p>Querido equipo:</p>
-    <p>El 1º de septiembre abrimos un nuevo capítulo en nuestra historia: nos mudamos a nuestras oficinas en José Luis Lagrange 103, Polanco.</p>
-    <p>Este cambio representa mucho más que un nuevo espacio físico: es la confirmación de que avanzamos hacia nuestra visión 2030: ser un grupo que combina servicios financieros, tecnológicos y movilidad segurs y confiable para transformar la vida de las familias modernas.</p>
-    <p>En este camino, estamos comenzando a incorporar inteligencia artificial como un motor que reforzará lo que ya hacemos bien; la IA no es un destino, es una herramienta que nos permitirá acelerar innovación y construir un futuro más inteligente y conectado.</p>
-    <p>Y eso no es todo, seguimos abriendo plazas en diversos estados de la República y en próximos días estaremos asegurando nuestra entrada a Sudamérica. Para sostener esta expansión estamos adquiriendo talento de muy alto nivel, tanto mexicano como extranjero, que fortalece nuestro equipo y eleva nuestras capacidades.</p>
-    <p>Nada de esto sería posible sin ustedes, nuestros colaboradores. Son la fuerza que impulsa cada avance, quienes convierten la visión en acción y hacen de esta empresa un lugar donde la innovación se vuelve realidad todos los días. El futuro que imaginamos solo puede construirse con su pasión, compromiso y talento.</p>
-    <p>Nuestra nueva sede simboliza esa ambición; es un espacio creado para multiplicar ideas, fortalecer la colaboración y materializar lo que parecía inalcanzable hace apenas unos años. Cada paso nos acerca más a consolidarnos como líderes globales en soluciones educativas y de movilidad.</p>
-    <p>Hoy lo más importante es quedarnos con la certeza de que juntos estamos diseñando el futuro.</p>
-    <p>Atentamente</p>
-    <p>Fermín Pliego De Anda<br>Fundador y Presidente del Consejo de Administración</p>
-  </section>
-
-  <section id="ubicacion">
-    <h2>SECCIÓN: Ubicación</h2>
-    <p>José Luis Lagrange 103, Piso 10, Colonia Polanco Primera Sección, Alcaldía Miguel Hidalgo, C.P. 11510 , Ciudad de México, México</p>
-    <p><a href="https://maps.app.goo.gl/xFkN5M5uGwuzXVCf6" target="_blank">https://maps.app.goo.gl/xFkN5M5uGwuzXVCf6</a></p>
-  </section>
-
-  <section id="instrucciones">
-    <h2>SECCIÓN: Instrucciones Día 1 /  1º de septiembre de 2025</h2>
-    <p>Estimados colaboradores:<br>
-    Les compartimos las indicaciones para la visita a nuestras oficinas con motivo de la inauguración de las instalaciones:</p>
-
-    <div class="card">
-      <h3>Llegada</h3>
-      <p>•	La llegada será a partir de las 8:00 de la mañana, en diferentes grupos.<br>
-      •	Jonathan Barrientos les hará llegar un correo electrónico con el grupo al que pertenecen y el horario en el que los esperamos.</p>
+<!-- Introducción / HERO -->
+<section class="hero" id="introduccion">
+  <div class="shape-blue"></div>
+  <div class="shape-green"></div>
+  <div class="shape-yellow"></div>
+  <div class="wrap">
+    <h1 class="h1">Introducción</h1>
+    <p class="sub">
+      El 1º de septiembre estrenamos oficinas en José Luis Lagrange 103, Polanco, marcando un impulso en nuestra Visión 2030: El universo donde las familias alcanzan su máximo potencial. 
+    </p>
+    <div class="cta">
+      <a class="btn btn-primary" href="#bienvenida">Leer Carta</a>
+      <a class="btn btn-outline" href="#ubicacion">Ver Ubicación</a>
+      <a class="btn btn-green" href="#instrucciones">Instrucciones del Día 1</a>
     </div>
+  </div>
+</section>
 
-    <div class="card">
-      <h3>Estacionamiento</h3>
-      <p>•	Solicitamos no acudir con vehículo. Ese día se les asignará su cajón de estacionamiento, pero es importante que primero realicen el recorrido a pie.<br>
-      •	En caso de que sea indispensable acudir en vehículo, existen estacionamientos cercanos (todos con costo):</p>
-      <ol>
-        <li>Estacionamiento del Vips a un costado del edificio.</li>
-        <li>Estacionamiento sobre Avenida Lagrange, a 30 metros del edificio.</li>
-        <li>Estacionamiento en Plaza Polanco Corporativo, frente al edificio.</li>
-      </ol>
+<!-- Carta de Bienvenida -->
+<section id="bienvenida">
+  <div class="container">
+    <h2 class="title">Carta de Bienvenida</h2>
+
+    <div class="card just">
+      <p>Querido equipo:</p>
+
+      <p>El 1º de septiembre abrimos un nuevo capítulo en nuestra historia: nos mudamos a nuestras oficinas en José Luis Lagrange 103, Polanco.</p>
+
+      <p>Este cambio representa mucho más que un nuevo espacio físico: es la confirmación de que avanzamos hacia nuestra visión 2030: ser un grupo que combina servicios financieros, tecnológicos y movilidad segurs y confiable para transformar la vida de las familias modernas.</p>
+
+      <p>En este camino, estamos comenzando a incorporar inteligencia artificial como un motor que reforzará lo que ya hacemos bien; la IA no es un destino, es una herramienta que nos permitirá acelerar innovación y construir un futuro más inteligente y conectado.</p>
+
+      <p>Y eso no es todo, seguimos abriendo plazas en diversos estados de la República y en próximos días estaremos asegurando nuestra entrada a Sudamérica. Para sostener esta expansión estamos adquiriendo talento de muy alto nivel, tanto mexicano como extranjero, que fortalece nuestro equipo y eleva nuestras capacidades.</p>
+
+      <p>Nada de esto sería posible sin ustedes, nuestros colaboradores. Son la fuerza que impulsa cada avance, quienes convierten la visión en acción y hacen de esta empresa un lugar donde la innovación se vuelve realidad todos los días. El futuro que imaginamos solo puede construirse con su pasión, compromiso y talento.</p>
+
+      <p>Nuestra nueva sede simboliza esa ambición; es un espacio creado para multiplicar ideas, fortalecer la colaboración y materializar lo que parecía inalcanzable hace apenas unos años. Cada paso nos acerca más a consolidarnos como líderes globales en soluciones educativas y de movilidad.</p>
+
+      <p>Hoy lo más importante es quedarnos con la certeza de que juntos estamos diseñando el futuro.</p>
+      <p>Atentamente</p>
+
+      <p>Fermín Pliego De Anda<br/>Fundador y Presidente del Consejo de Administración</p>
+
+      <div class="cta" style="margin-top:10px">
+        <a class="btn btn-outline" href="#introduccion">Volver arriba</a>
+        <a class="btn btn-green" href="#ubicacion">Cómo llegar</a>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="card">
-      <h3>Comida</h3>
-      <p>•	Les pedimos no llevar alimentos, ya que tendremos nuestra primera comida en las instalaciones.</p>
+<!-- Ubicación -->
+<section id="ubicacion">
+  <div class="container">
+    <h2 class="title">Ubicación</h2>
+    <div class="grid grid-2">
+      <div class="card just">
+        <p>José Luis Lagrange 103, Piso 10, Colonia Polanco Primera Sección, Alcaldía Miguel Hidalgo, C.P. 11510 , Ciudad de México, México</p>
+        <p><a href="https://maps.app.goo.gl/xFkN5M5uGwuzXVCf6" target="_blank" rel="noreferrer">https://maps.app.goo.gl/xFkN5M5uGwuzXVCf6</a></p>
+        <div class="cta">
+          <a class="btn btn-primary" href="https://maps.app.goo.gl/xFkN5M5uGwuzXVCf6" target="_blank" rel="noreferrer">Abrir en Google Maps</a>
+          <button class="btn btn-outline" id="copyAddr" type="button">Copiar dirección</button>
+        </div>
+      </div>
+      <div class="card" style="display:grid;place-items:center;min-height:220px;background:var(--muted)">
+        <div class="just" style="text-align:center;max-width:90%;color:#64748B">
+          Vista previa del mapa<br/><small>Abre el enlace para ver la ubicación en Google Maps.</small>
+        </div>
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="card">
-      <h3>Vestimenta</h3>
-      <p>•	El código de vestimenta para este día será casual-formal.</p>
-    </div>
+<!-- Instrucciones Día 1 -->
+<section id="instrucciones">
+  <div class="container">
+    <h2 class="title">Instrucciones Día 1 /  1º de septiembre de 2025</h2>
 
-    <div class="card">
-      <h3>Identificación</h3>
-      <p>•	Es indispensable portar su credencial de la empresa o, en su defecto, una identificación oficial.</p>
-    </div>
-
-    <div class="card">
-      <h3>Reglamento</h3>
-      <p>•	Antes de su visita, les pedimos leer con atención los reglamentos que rigen el edificio, mismos que serán enviados por correo, con el fin de garantizar el cumplimiento de las normas internas. </p>
-    </div>
-
-    <div class="card">
-      <h3>Contacto</h3>
-      <p>•	Cualquier duda favor de comunicarse con Eric Barrera, de preferencia antes del 1 de septiembre, para poder brindarles la atención que todos merecen.</p>
-    </div>
-  </section>
-
-  <footer>
-    © 2025 FERPA · Grupo UPA · EDYEN · Compra Rentando · EDYEN Capital
-  </footer>
-</body>
-</html>
+    <div class="card just">
+      <p>Estimados colaboradores:<br>
+      Les compartimos las indicaciones para la visita a nuestras oficinas con motivo de
