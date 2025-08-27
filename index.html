@@ -6,7 +6,7 @@
 <title>Lagrange 103 · Bienvenida</title>
 <meta name="description" content="Bienvenida, ubicación e indicaciones para la mudanza a Lagrange 103." />
 <style>
-  /* Paleta refinada basada en el logo */
+  /* Paleta refinada del logo */
   :root{
     --blue:#0A67F5;
     --green:#2ED93F;
@@ -23,34 +23,40 @@
   }
 
   *{box-sizing:border-box}
-  html,body{margin:0;background:#fff;color:var(--ink);font:16px/1.7 system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,"Helvetica Neue",Arial}
+  html,body{
+    margin:0;
+    background:#fff;
+    color:var(--ink);
+    font:17px/1.7 "Helvetica Neue", Inter, Roboto, "Segoe UI", Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
 
   a{color:var(--blue);text-decoration:none}
   a:hover{text-decoration:underline}
 
-  /* Header minimalista */
+  /* Header */
   header{
     position:sticky;top:0;z-index:40;background:rgba(255,255,255,.9);
     backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid #E6ECF5;
   }
   .nav{max-width:1100px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
-  .brand{display:flex;align-items:center;gap:10px;font-weight:900;color:var(--blue)}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--blue)}
   .brand img{height:34px}
   .links{display:flex;gap:8px;flex-wrap:wrap}
   .chip{
-    display:inline-flex;align-items:center;gap:.5rem;padding:8px 14px;border-radius:999px;
-    font-weight:800;border:1.5px solid #DDE6FF;color:#334155;background:#fff;
+    display:inline-flex;align-items:center;padding:8px 14px;border-radius:999px;
+    font-weight:600;border:1.3px solid #DDE6FF;color:#334155;background:#fff;font-size:15px;
   }
   .chip:hover{border-color:#C9D8FF}
 
-  /* Botones elegantes */
+  /* Botones */
   .btn{
-    display:inline-flex;align-items:center;gap:.5rem;padding:12px 18px;border-radius:999px;
-    font-weight:900;border:1.5px solid transparent;box-shadow:var(--shadow-sm);cursor:pointer
+    display:inline-flex;align-items:center;padding:12px 20px;border-radius:999px;
+    font-weight:600;font-size:15px;border:1.5px solid transparent;box-shadow:var(--shadow-sm);cursor:pointer
   }
   .btn-blue{background:var(--blue);color:#fff}
   .btn-outline{background:#fff;color:var(--blue);border-color:#C9D8FF}
-  .btn-green{background:var(--green);color:#06370D;border-color:transparent}
+  .btn-green{background:var(--green);color:#06370D}
   .btn-red{background:var(--red);color:#fff}
 
   /* Secciones */
@@ -58,34 +64,36 @@
   .container{max-width:1100px;margin:0 auto;padding:0 20px}
 
   .title{
-    margin:0 0 14px;font-weight:900;font-size:clamp(26px,3.6vw,40px);
+    margin:0 0 14px;font-weight:700;font-size:clamp(26px,3.4vw,38px);
     background:linear-gradient(90deg,var(--green),var(--blue));
     -webkit-background-clip:text;background-clip:text;color:transparent;
-    text-align:justify;
+    text-align:left;
+    font-family:"Helvetica Neue", Inter, Roboto, sans-serif;
   }
 
-  .lead{max-width:900px;margin:0;color:#475569;font-size:clamp(16px,2.2vw,20px);text-align:justify}
+  .lead{max-width:900px;margin:0;color:#475569;font-size:18px;text-align:justify}
 
-  /* Hero sobrio */
+  /* Hero */
   .hero{background:var(--muted);border-bottom:1px solid #E6ECF5}
   .hero .wrap{max-width:1100px;margin:0 auto;padding:48px 20px 40px}
   .h1{
-    margin:0 0 10px;font-weight:900;letter-spacing:-.02em;line-height:1.08;
-    font-size:clamp(32px,6vw,56px);color:var(--blue);text-align:justify
+    margin:0 0 12px;font-weight:700;letter-spacing:-.01em;line-height:1.1;
+    font-size:clamp(32px,6vw,52px);color:var(--blue);
+    font-family:"Helvetica Neue", Inter, Roboto, sans-serif;
   }
   .cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 
   /* Tarjetas */
   .card{
     background:var(--card);border:1px solid #E6ECF5;border-radius:var(--radius);
-    box-shadow:var(--shadow);padding:22px;text-align:justify;word-wrap:break-word;overflow-wrap:break-word;
+    box-shadow:var(--shadow);padding:22px;text-align:justify;
   }
   .grid{display:grid;gap:18px}
   @media (min-width:860px){ .grid-2{grid-template-columns:1fr 1fr} }
 
   /* Footer */
   footer{border-top:1px solid #E6ECF5}
-  footer .container{padding:22px 20px;color:#64748B;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px}
+  footer .container{padding:22px 20px;color:#64748B;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:10px;font-size:15px}
 </style>
 </head>
 <body>
@@ -95,7 +103,7 @@
   <div class="nav">
     <div class="brand">
       <img src="Edyen.png" alt="Edyen" />
-      Edyen · Lagrange 103
+      Lagrange 103
     </div>
     <nav class="links" aria-label="Navegación">
       <a class="chip" href="#introduccion">Introducción</a>
@@ -109,14 +117,14 @@
 <!-- Introducción -->
 <section class="hero" id="introduccion">
   <div class="wrap">
-    <h1 class="h1">SECCIÓN: Introducción</h1>
+    <h1 class="h1">Introducción</h1>
     <p class="lead">
       El 1º de septiembre estrenamos oficinas en José Luis Lagrange 103, Polanco, marcando un impulso en nuestra Visión 2030: El universo donde las familias alcanzan su máximo potencial. 
     </p>
     <div class="cta">
       <a class="btn btn-blue" href="#bienvenida">Leer carta</a>
       <a class="btn btn-outline" href="#ubicacion">Ver ubicación</a>
-      <a class="btn btn-green" href="#dia1">Instrucciones del Día 1</a>
+      <a class="btn btn-green" href="#dia1">Instrucciones Día 1</a>
     </div>
   </div>
 </section>
@@ -124,7 +132,7 @@
 <!-- Carta de Bienvenida -->
 <section id="bienvenida">
   <div class="container">
-    <h2 class="title">SECCIÓN: Carta de Bienvenida</h2>
+    <h2 class="title">Carta de Bienvenida</h2>
 
     <div class="card">
       <p>Querido equipo:</p>
@@ -145,10 +153,6 @@
       <p>Atentamente</p>
 
       <p>Fermín Pliego De Anda<br/>Fundador y Presidente del Consejo de Administración</p>
-
-      <div class="cta" style="margin-top:6px">
-        <a class="btn btn-outline" href="#introduccion">Volver arriba</a>
-      </div>
     </div>
   </div>
 </section>
@@ -156,7 +160,7 @@
 <!-- Ubicación -->
 <section id="ubicacion">
   <div class="container">
-    <h2 class="title">SECCIÓN: Ubicación</h2>
+    <h2 class="title">Ubicación</h2>
     <div class="grid grid-2">
       <div class="card">
         <p>José Luis Lagrange 103, Piso 10, Colonia Polanco Primera Sección, Alcaldía Miguel Hidalgo, C.P. 11510 , Ciudad de México, México</p>
@@ -178,7 +182,7 @@
 <!-- Día 1 -->
 <section id="dia1">
   <div class="container">
-    <h2 class="title">SECCIÓN: 1º de septiembre de 2025 / Día 1</h2>
+    <h2 class="title">1º de septiembre de 2025 / Día 1</h2>
 
     <div class="card">
       <p>Estimados colaboradores:<br>
@@ -188,14 +192,14 @@
     <div class="grid grid-2">
       <div class="card">
         <h3 style="margin-top:0;color:var(--blue)">Llegada</h3>
-        <p>•	La llegada será a partir de las 8:00 de la mañana, en diferentes grupos.<br>
-        •	Jonathan Barrientos les hará llegar un correo electrónico con el grupo al que pertenecen y el horario en el que los esperamos.</p>
+        <p>• La llegada será a partir de las 8:00 de la mañana, en diferentes grupos.<br>
+        • Jonathan Barrientos les hará llegar un correo electrónico con el grupo al que pertenecen y el horario en el que los esperamos.</p>
       </div>
 
       <div class="card">
         <h3 style="margin-top:0;color:var(--blue)">Estacionamiento</h3>
-        <p>•	Solicitamos no acudir con vehículo. Ese día se les asignará su cajón de estacionamiento, pero es importante que primero realicen el recorrido a pie.<br>
-        •	En caso de que sea indispensable acudir en vehículo, existen estacionamientos cercanos (todos con costo):</p>
+        <p>• Solicitamos no acudir con vehículo. Ese día se les asignará su cajón de estacionamiento, pero es importante que primero realicen el recorrido a pie.<br>
+        • En caso de que sea indispensable acudir en vehículo, existen estacionamientos cercanos (todos con costo):</p>
         <ol style="margin-top:6px">
           <li>Estacionamiento del Vips a un costado del edificio.</li>
           <li>Estacionamiento sobre Avenida Lagrange, a 30 metros del edificio.</li>
@@ -205,27 +209,27 @@
 
       <div class="card">
         <h3 style="margin-top:0;color:var(--blue)">Comida</h3>
-        <p>•	Les pedimos no llevar alimentos, ya que tendremos nuestra primera comida en las instalaciones.</p>
+        <p>• Les pedimos no llevar alimentos, ya que tendremos nuestra primera comida en las instalaciones.</p>
       </div>
 
       <div class="card">
         <h3 style="margin-top:0;color:var(--blue)">Vestimenta</h3>
-        <p>•	El código de vestimenta para este día será casual-formal.</p>
+        <p>• El código de vestimenta para este día será casual-formal.</p>
       </div>
 
       <div class="card">
         <h3 style="margin-top:0;color:var(--blue)">Identificación</h3>
-        <p>•	Es indispensable portar su credencial de la empresa o, en su defecto, una identificación oficial.</p>
+        <p>• Es indispensable portar su credencial de la empresa o, en su defecto, una identificación oficial.</p>
       </div>
 
       <div class="card">
         <h3 style="margin-top:0;color:var(--blue)">Reglamento</h3>
-        <p>•	Antes de su visita, les pedimos leer con atención los reglamentos que rigen el edificio, mismos que serán enviados por correo, con el fin de garantizar el cumplimiento de las normas internas. </p>
+        <p>• Antes de su visita, les pedimos leer con atención los reglamentos que rigen el edificio, mismos que serán enviados por correo, con el fin de garantizar el cumplimiento de las normas internas. </p>
       </div>
 
       <div class="card" style="grid-column:1/-1">
         <h3 style="margin-top:0;color:var(--blue)">Contacto</h3>
-        <p>•	Cualquier duda favor de comunicarse con Eric Barrera, de preferencia antes del 1 de septiembre, para poder brindarles la atención que todos merecen.</p>
+        <p>• Cualquier duda favor de comunicarse con Eric Barrera, de preferencia antes del 1 de septiembre, para poder brindarles la atención que todos merecen.</p>
         <div class="cta">
           <a class="btn btn-red" href="#introduccion">Volver arriba</a>
         </div>
