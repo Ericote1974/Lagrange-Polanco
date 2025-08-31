@@ -1,23 +1,72 @@
-/* === Forzar justificado en todo el contenido textual === */
-:lang(es) p,
-:lang(es) li,
-:lang(es) ul,
-:lang(es) ol,
-:lang(es) h1,
-:lang(es) h2,
-:lang(es) h3,
-:lang(es) h4,
-:lang(es) h5,
-:lang(es) h6,
-.lead,
-.title,
-.card {
-  text-align: justify !important;
-  text-justify: inter-word;
-  hyphens: auto;
-  -webkit-hyphens: auto;
-  -ms-hyphens: auto;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lagrange 103 · Bienvenida</title>
+<meta name="description" content="Bienvenida, ubicación e indicaciones para la mudanza a Lagrange 103." />
+<style>
+  :root{
+    --blue:#0A67F5;
+    --green:#2ED93F;
+    --red:#FF2A2A;
+    --yellow:#FFC54D;
 
-/* (opcional) Mejor sangría en listas dentro de tarjetas */
-.card ul, .card ol { padding-left: 1.15rem; }
+    --ink:#0F172A;
+    --muted:#F7F9FC;
+    --card:#FFFFFF;
+
+    --radius:16px;
+    --shadow:0 12px 28px rgba(17,24,39,.08);
+    --shadow-sm:0 6px 18px rgba(17,24,39,.06);
+  }
+
+  *{box-sizing:border-box}
+  html,body{
+    margin:0;
+    background:#fff;
+    color:var(--ink);
+    font:17px/1.7 "Helvetica Neue", Inter, Roboto, "Segoe UI", Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  a{color:var(--blue);text-decoration:none}
+  a:hover{text-decoration:underline}
+
+  header{
+    position:sticky;top:0;z-index:40;background:rgba(255,255,255,.9);
+    backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid #E6ECF5;
+  }
+  .nav{max-width:1100px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  .brand{display:flex;align-items:center;gap:10px;font-weight:700;color:var(--blue)}
+  .brand img{height:34px}
+  .links{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{
+    display:inline-flex;align-items:center;padding:8px 14px;border-radius:999px;
+    font-weight:600;border:1.3px solid #DDE6FF;color:#334155;background:#fff;font-size:15px;
+  }
+  .chip:hover{border-color:#C9D8FF}
+
+  .btn{
+    display:inline-flex;align-items:center;padding:12px 20px;border-radius:999px;
+    font-weight:600;font-size:15px;border:1.5px solid transparent;box-shadow:var(--shadow-sm);cursor:pointer
+  }
+  .btn-blue{background:var(--blue);color:#fff}
+  .btn-outline{background:#fff;color:var(--blue);border-color:#C9D8FF}
+  .btn-green{background:var(--green);color:#06370D}
+  .btn-red{background:var(--red);color:#fff}
+
+  section{scroll-margin-top:90px;padding:56px 0}
+  .container{max-width:1100px;margin:0 auto;padding:0 20px}
+
+  .title{
+    margin:0 0 14px;font-weight:700;font-size:clamp(26px,3.4vw,38px);
+    background:linear-gradient(90deg,var(--green),var(--blue));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+    text-align:justify;
+  }
+
+  .lead{max-width:900px;margin:0;color:#475569;font-size:18px}
+
+  .hero{background:var(--muted);border-bottom:1px solid #E6ECF5}
+  .hero .wrap{max-width:1100px;ma
