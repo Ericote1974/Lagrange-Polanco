@@ -30,6 +30,13 @@
     -webkit-font-smoothing:antialiased;
   }
 
+  /* === Justificación global de textos === */
+  :where(p, li, h1, h2, h3, h4, h5, h6, blockquote){
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
+  }
+
   a{color:var(--blue);text-decoration:none}
   a:hover{text-decoration:underline}
 
@@ -63,10 +70,10 @@
     margin:0 0 14px;font-weight:700;font-size:clamp(26px,3.4vw,38px);
     background:linear-gradient(90deg,var(--green),var(--blue));
     -webkit-background-clip:text;background-clip:text;color:transparent;
-    text-align:left;
+    text-align: justify; /* <- antes estaba left */
   }
 
-  .lead{max-width:900px;margin:0;color:#475569;font-size:18px;text-align:justify}
+  .lead{max-width:900px;margin:0;color:#475569;font-size:18px}
 
   .hero{background:var(--muted);border-bottom:1px solid #E6ECF5}
   .hero .wrap{max-width:1100px;margin:0 auto;padding:48px 20px 40px}
@@ -78,7 +85,7 @@
 
   .card{
     background:var(--card);border:1px solid #E6ECF5;border-radius:var(--radius);
-    box-shadow:var(--shadow);padding:22px;text-align:justify;
+    box-shadow:var(--shadow);padding:22px;
   }
   .grid{display:grid;gap:18px}
   @media (min-width:860px){ .grid-2{grid-template-columns:1fr 1fr} }
@@ -98,142 +105,5 @@
     <nav class="links">
       <a class="chip" href="#introduccion">Introducción</a>
       <a class="chip" href="#bienvenida">Carta</a>
-      <a class="chip" href="#ubicacion">Ubicación</a>
-      <a class="chip" href="#dia1">Día 1</a>
-    </nav>
-  </div>
-</header>
+      <a class="chip" href="#ubicacion"
 
-<section class="hero" id="introduccion">
-  <div class="wrap">
-    <h1 class="h1">Introducción</h1>
-    <p class="lead">
-      El 1º de septiembre estrenamos oficinas en José Luis Lagrange 103, Polanco, marcando un impulso en nuestra Visión 2030: El universo donde las familias alcanzan su máximo potencial. 
-    </p>
-    <div class="cta">
-      <a class="btn btn-blue" href="#bienvenida">Leer carta</a>
-      <a class="btn btn-outline" href="#ubicacion">Ver ubicación</a>
-      <a class="btn btn-green" href="#dia1">Instrucciones Día 1</a>
-    </div>
-  </div>
-</section>
-
-<section id="bienvenida">
-  <div class="container">
-    <h2 class="title">Bienvenida</h2>
-    <div class="card">
-      <p>Querido equipo:</p>
-      <p>El 1º de septiembre abrimos un nuevo capítulo en nuestra historia: nos mudamos a nuestras oficinas en José Luis Lagrange 103, Polanco.</p>
-      <p>Este cambio representa mucho más que un nuevo espacio físico: es la confirmación de que avanzamos hacia nuestra visión 2030: ser un universo que combina servicios financieros, tecnológicos así como movilidad segura y confiable para transformar la vida de las familias modernas.</p>
-      <p>En este camino, incorporararemos inteligencia artificial como un motor que reforzará lo que ya hacemos bien; la IA es un recurso que nos permitirá acelerar innovación y construir un futuro más inteligente y conectado.</p>
-      <p>Y eso no es todo, seguimos abriendo plazas en diversos estados de la República y en próximos días estaremos asegurando nuestra entrada a Sudamérica. Para sostener esta expansión estamos adquiriendo talento de muy alto nivel, tanto mexicano como extranjero, que fortalece nuestro equipo y eleva nuestras capacidades.</p>
-      <p>Nada de esto sería posible sin ustedes, nuestros colaboradores. Son la fuerza que impulsa cada avance, quienes convierten la visión en acción y hacen de esta empresa un lugar donde la innovación se vuelve realidad todos los días. El futuro que imaginamos solo puede construirse con su pasión, compromiso y talento.</p>
-      <p>Con este cambio, los invitamos también a seguir creciendo en lo profesional, a asumir nuevos retos y a desarrollar sus capacidades al ritmo en que la empresa se expande. Queremos que cada paso que damos como organización se refleje en su propio desarrollo, porque nuestro crecimiento solo tiene sentido si va de la mano con el crecimiento de todos ustedes.</p>
-      <p>Nuestra nueva sede simboliza esa ambición; es un espacio creado para multiplicar ideas, fortalecer la colaboración y materializar lo que parecía inalcanzable hace apenas unos años. Cada paso nos acerca más a consolidarnos como líderes globales en soluciones educativas y de movilidad.</p>
-      <p>Hoy lo más importante es quedarnos con la certeza de que juntos estamos diseñando el futuro.</p>
-      <p>Atentamente</p>
-      <p>Fermín Pliego De Anda<br/>Fundador y Presidente del Consejo de Administración</p>
-    </div>
-  </div>
-</section>
-
-<section id="ubicacion">
-  <div class="container">
-    <h2 class="title">Ubicación</h2>
-    <div class="grid grid-2">
-      <div class="card">
-        <p>José Luis Lagrange 103, Piso 10, Colonia Polanco Primera Sección, Alcaldía Miguel Hidalgo, C.P. 11510 , Ciudad de México, México</p>
-        <p><a href="https://maps.app.goo.gl/xFkN5M5uGwuzXVCf6" target="_blank">https://maps.app.goo.gl/xFkN5M5uGwuzXVCf6</a></p>
-        <div class="cta">
-          <a class="btn btn-blue" href="https://maps.app.goo.gl/xFkN5M5uGwuzXVCf6" target="_blank">Abrir en Google Maps</a>
-          <button class="btn btn-outline" id="copyAddr" type="button">Copiar dirección</button>
-        </div>
-      </div>
-      <div class="card" style="padding:0;overflow:hidden">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.6433421723616!2d-99.201943!3d19.432607!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d2020501234567%3A0xabcdef123456789!2sJosé%20Luis%20Lagrange%20103%2C%20Polanco%2C%20CDMX!5e0!3m2!1ses-419!2smx!4v1700000000000" 
-          width="100%" height="250" style="border:0" allowfullscreen="" loading="lazy"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="dia1">
-  <div class="container">
-    <h2 class="title">1º de septiembre de 2025 / Día 1</h2>
-    <div class="card">
-      <p>Estimados colaboradores:<br>
-      Les compartimos las indicaciones para la visita a nuestras oficinas con motivo de la inauguración de las instalaciones.</p>
-    </div>
-
-    <div class="grid grid-2">
-      <div class="card">
-        <h3 style="margin-top:0;color:var(--blue)">Llegada</h3>
-        <p>• La llegada será en diferentes horarios.<br>
-        • Revisa el cuerpo del correo, allí encontrarás el horario en el que te esperamos.</p>
-      </div>
-
-      <div class="card">
-        <h3 style="margin-top:0;color:var(--blue)">Estacionamiento</h3>
-        <p>• Solicitamos no acudir con vehículo. Ese día se les asignará su cajón de estacionamiento, pero es importante que primero realicen el recorrido a pie.<br>
-        • En caso de que sea indispensable acudir en vehículo, existen estacionamientos cercanos (todos con costo):</p>
-        <ol>
-          <li>Estacionamiento del Vips a un costado del edificio.</li>
-          <li>Estacionamiento sobre Avenida Lagrange, a 30 metros del edificio.</li>
-          <li>Estacionamiento en Plaza Polanco Corporativo, frente al edificio.</li>
-        </ol>
-      </div>
-
-      <div class="card">
-        <h3 style="margin-top:0;color:var(--blue)">Comida</h3>
-        <p>• Les pedimos no llevar alimentos, ya que tendremos una comida de bienvenida.</p>
-      </div>
-
-      <div class="card">
-        <h3 style="margin-top:0;color:var(--blue)">Vestimenta</h3>
-        <p>• El código de vestimenta para este día será casual-formal.</p>
-      </div>
-
-      <div class="card">
-        <h3 style="margin-top:0;color:var(--blue)">Identificación</h3>
-        <p>• Es indispensable portar una identificación oficial.</p>
-      </div>
-
-      <div class="card">
-        <h3 style="margin-top:0;color:var(--blue)">Reglamento</h3>
-        <p>• Antes de su visita, les pedimos leer con atención los reglamentos que rigen el edificio, mismos que serán enviados por correo, con el fin de garantizar el cumplimiento de las normas internas.</p>
-      </div>
-
-      <div class="card" style="grid-column:1/-1">
-        <h3 style="margin-top:0;color:var(--blue)">Contacto</h3>
-        <p>• Cualquier duda favor de comunicarse con Eric Barrera, de preferencia antes del 1 de septiembre, para poder brindarles la atención que todos merecen.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<footer>
-  <div class="container">
-    <div>© <span id="year"></span> Edyen</div>
-    <div class="links">
-      <a class="chip" href="#bienvenida">Carta</a>
-      <a class="chip" href="#ubicacion">Ubicación</a>
-      <a class="chip" href="#dia1">Día 1</a>
-    </div>
-  </div>
-</footer>
-
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-  document.getElementById('copyAddr').addEventListener('click', async () => {
-    const addr = "José Luis Lagrange 103, Piso 10, Colonia Polanco Primera Sección, Alcaldía Miguel Hidalgo, C.P. 11510 , Ciudad de México, México";
-    try{
-      await navigator.clipboard.writeText(addr);
-      const b = document.getElementById('copyAddr');
-      const prev = b.textContent;
-      b.textContent = "¡Dirección copiada!";
-      setTimeout(()=> b.textContent = prev, 1600);
-    }catch(e){ alert("Copia manual:\n\n"+addr); }
-  });
-</script>
-</body>
-</html>
